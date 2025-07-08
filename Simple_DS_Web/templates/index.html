@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Dashboard</title>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-image: url('Data-Structure.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #2d2346;
+        }
+        .dashboard-container {
+            background: rgba(255,255,255,0.96);
+            max-width: 900px;
+            margin: 56px auto 0 auto;
+            border-radius: 22px;
+            box-shadow: 0 6px 32px rgba(108,71,166,0.13);
+            padding: 36px 28px 28px 28px;
+            border: 1.5px solid #e0d7f3;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 28px;
+            color: #6c47a6;
+            letter-spacing: 1.5px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 8px #e6e0f7;
+        }
+        .main-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            padding: 24px 0;
+        }
+        .feature-card {
+            background: linear-gradient(90deg, #f8f6ff 60%, #f5e6ff 100%);
+            border: 1.5px solid #e0d7f3;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(108,71,166,0.08);
+            padding: 28px 24px 20px 24px;
+            min-width: 220px;
+            max-width: 260px;
+            flex: 1 1 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .feature-card:hover {
+            box-shadow: 0 4px 18px rgba(108,71,166,0.13);
+            transform: translateY(-4px) scale(1.03);
+        }
+        .feature-link {
+            display: block;
+            width: 100%;
+            padding: 16px 0;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #dcdcff 60%, #f5e6ff 100%);
+            color: #6c47a6;
+            font-weight: 600;
+            font-size: 1.13rem;
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+            border: 1.5px solid #e0d7f3;
+            transition: background 0.2s, color 0.2s, transform 0.15s;
+        }
+        .feature-link.active, .feature-link:hover {
+            background: linear-gradient(90deg, #6c47a6 60%, #a64ca6 100%);
+            color: #fff;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 18px rgba(108,71,166,0.13);
+        }
+        .feature-desc {
+            color: #5a4a7a;
+            font-size: 0.98rem;
+            text-align: center;
+            margin-top: 4px;
+        }
+        @media (max-width: 900px) {
+            .main-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+            .feature-card {
+                min-width: 90vw;
+                max-width: 98vw;
+            }
+        }
+        @media (max-width: 600px) {
+            .dashboard-container {
+                max-width: 98vw;
+                padding: 14px 2vw;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            .feature-link {
+                font-size: 1rem;
+                padding: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Application Dashboard</h1>
+        <div class="main-links">
+            <div class="feature-card">
+                <a href="/queue" class="feature-link">Queue Application</a>
+                <div class="feature-desc">Enqueue, dequeue, and visualize a simple queue data structure.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/stack" class="feature-link">Stack Application</a>
+                <div class="feature-desc">Push, pop, and peek operations for stack with live updates.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/linked_list" class="feature-link">Linked List Application</a>
+                <div class="feature-desc">Insert, delete, and traverse a singly linked list interactively.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/doubly_linked_list" class="feature-link">Doubly Linked List</a>
+                <div class="feature-desc">Work with a doubly linked list: insertions and deletions at both ends.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/priority_queue" class="feature-link">Priority Queue</a>
+                <div class="feature-desc">Manage a queue where each element has a priority.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/binary_tree" class="feature-link">Binary Tree</a>
+                <div class="feature-desc">Insert nodes and visualize the structure of a binary tree.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/huffman" class="feature-link">Huffman Coding</a>
+                <div class="feature-desc">Encode text and visualize the Huffman tree for compression.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/graph_dfs" class="feature-link">Graph DFS</a>
+                <div class="feature-desc">Add/remove vertices and edges, and perform depth-first search.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/graph_bfs" class="feature-link">Graph BFS Application</a>
+                <div class="feature-desc">Breadth-first search and graph editing with visualization.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/tsp" class="feature-link">TSP</a>
+                <div class="feature-desc">Solve the Travelling Salesman Problem and see the optimal path.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/hash_table" class="feature-link">Hash Table</a>
+                <div class="feature-desc">Basic hash table operations without collision handling.</div>
+            </div>
+            <div class="feature-card">
+                <a href="/hash_table_chaining" class="feature-link">Hash Table Chaining</a>
+                <div class="feature-desc">Hash table with chaining for collision resolution.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

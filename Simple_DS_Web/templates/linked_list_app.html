@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-image: url('Data-Structure.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #2d2346;
+        }
+        .container {
+            background: rgba(255,255,255,0.96);
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            border-radius: 22px;
+            box-shadow: 0 6px 32px rgba(108,71,166,0.13);
+            padding: 36px 28px 28px 28px;
+            border: 1.5px solid #e0d7f3;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #6c47a6;
+            letter-spacing: 1.5px;
+            font-size: 2.1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 8px #e6e0f7;
+        }
+        .desc {
+            text-align: center;
+            color: #5a4a7a;
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+        }
+        .bfs-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        .bfs-card {
+            background: linear-gradient(90deg, #f8f6ff 60%, #f5e6ff 100%);
+            border: 1.5px solid #e0d7f3;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(108,71,166,0.08);
+            padding: 18px 18px 10px 18px;
+            min-width: 200px;
+            max-width: 240px;
+            flex: 1 1 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bfs-card h2 {
+            font-size: 1.15rem;
+            margin: 0 0 10px 0;
+            color: #6c47a6;
+        }
+        .bfs-card form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: none;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            margin-bottom: 0;
+        }
+        .bfs-card input[type="text"] {
+            padding: 0.6rem;
+            border-radius: 8px;
+            border: 2px solid #e0d7f3;
+            font-size: 1rem;
+            background: #fff;
+        }
+        .bfs-card button {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #6c47a6 60%, #a64ca6 100%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            box-shadow: 0 2px 12px rgba(108,71,166,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 4px;
+        }
+        .bfs-card button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 18px rgba(108,71,166,0.2);
+        }
+        .visual-section {
+            margin-top: 32px;
+            text-align: center;
+        }
+        .flask-output {
+            color: #a64ca6;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background: #f8f6ff;
+            border-radius: 8px;
+            padding: 0.5em 1em;
+            margin: 1em auto;
+            display: inline-block;
+            border: 1.5px solid #e0d7f3;
+        }
+        .flashes {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .flashes li {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #dcdcff 60%, #f5e6ff 100%);
+            color: #6c47a6;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .back-link:hover {
+            background: linear-gradient(90deg, #6c47a6 60%, #a64ca6 100%);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 900px) {
+            .bfs-flex {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+            }
+            .bfs-card {
+                min-width: 90vw;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Linked List</h1>
+        <div class="desc">Insert, delete, or traverse the linked list. Enter an item and select the operation you want to perform.</div>
+        <div class="bfs-flex">
+            <div class="bfs-card">
+                <form method="POST">
+                    <input type="text" name="item" placeholder="Item" required>
+                    <button type="submit" name="action" value="Insert at Beginning">Insert at Beginning</button>
+                    <button type="submit" name="action" value="Insert at End">Insert at End</button>
+                </form>
+            </div>
+            <div class="bfs-card">
+                <form method="POST">
+                    <button type="submit" name="action" value="Delete at Beginning">Delete at Beginning</button>
+                    <button type="submit" name="action" value="Delete at End">Delete at End</button>
+                </form>
+            </div>
+            <div class="bfs-card">
+                <form method="POST">
+                    <button type="submit" name="action" value="Traverse">Traverse</button>
+                </form>
+            </div>
+        </div>
+        <div class="visual-section">
+            <h2>Linked List</h2>
+            <div class="flask-output">{{ linked_list_items }}</div>
+        </div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <a href="/" class="back-link">Back to Dashboard</a>
+    </div>
+</body>
+</html>
