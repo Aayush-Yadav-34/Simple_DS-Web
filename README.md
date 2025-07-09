@@ -95,8 +95,10 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 - Visualizations and results will be displayed on each page, with Flask output highlighted for clarity.
 
 ## Screenshots
-![image](https://github.com/user-attachments/assets/456f77b4-28b4-40d3-9e5f-37f910878968)
-
+![Screenshot (377)](https://github.com/user-attachments/assets/96bdaccc-01dc-4f49-a914-285b9a88668e)
+![Screenshot (368)](https://github.com/user-attachments/assets/e112a763-bb3f-4dcf-bb3b-562b001c24de)
+![Screenshot (372)](https://github.com/user-attachments/assets/07933116-908e-4994-83e9-f43c278c547d)
+![Screenshot (375)](https://github.com/user-attachments/assets/ec631e70-cd63-4f26-a169-6afe564ad697)
 
 ## License
 This project is for educational purposes. Add a license if you intend to share or distribute.
