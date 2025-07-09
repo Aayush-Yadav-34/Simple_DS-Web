@@ -95,6 +95,7 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 - Visualizations and results will be displayed on each page, with Flask output highlighted for clarity.
 
 ## Screenshots
+![image](https://github.com/user-attachments/assets/456f77b4-28b4-40d3-9e5f-37f910878968)
 
 
 ## License
